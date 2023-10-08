@@ -42,7 +42,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
 
     # Send RCPT TO command and handle server response.
     # Fill in start
-    rcpttoCommand = 'RCPT TO:<gandhi@gmail.com> \r\n'
+    rcpttoCommand = 'RCPT TO:<gandhi@gmail.com>\r\n'
     clientSocket.send(rcpttoCommand.encode())
     recv3 = clientSocket.recv(1024).decode()
     if recv3[:3] != '250' || recv3[:3] != '251' :  #hash out
