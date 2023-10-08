@@ -74,9 +74,9 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     # Fill in start
     quitCommand = 'QUIT\r\n'
     clientSocket.send(quitCommand.encode())
-    #recv5 = clientSocket.recv(1024).decode()
-    #if recv5[:3] != '221':  # hash out
-        #print('QUIT command not received from server.')  # hash out
+    recv5 = clientSocket.recv(1024).decode()
+    if recv5[:3] != '221':  # hash out
+        print('QUIT command not received from server.')  # hash out
 
     # Fill in end
 
