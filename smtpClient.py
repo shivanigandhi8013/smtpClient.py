@@ -31,6 +31,13 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
 
     # Send MAIL FROM command and handle server response.
     # Fill in start
+    mailfromCommand = 'MAIL FROM:<shivani@gmail.com>\r\n'
+    clientSocket.send(mailfromCommand.encode())
+    recv2 = clientSocket.recv(1024).decode()
+    if recv2[:3] != '250':  #hash out
+        print('MAIL FROM command not received from server.')  #hash out
+
+
     # Fill in end
 
     # Send RCPT TO command and handle server response.
