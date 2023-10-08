@@ -42,13 +42,13 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
 
     # Send RCPT TO command and handle server response.
     # Fill in start
-    rcpttoCommand = 'RCPT TO:<gandhi@gmail.com>\r\n'
-    clientSocket.send(rcpttoCommand.encode())
-    recv3 = clientSocket.recv(1024).decode()
-    if recv3[:3] != '250':  #hash out
-        print('RCPT TO command not received from server.')  #hash out
-    if recv3[:3] != '251':
-        print('RCPT TO command not received from server.')  # hash out
+    #rcpttoCommand = 'RCPT TO:<gandhi@gmail.com>\r\n'
+    #clientSocket.send(rcpttoCommand.encode())
+    #recv3 = clientSocket.recv(1024).decode()
+    #if recv3[:3] != '250':  #hash out
+        #print('RCPT TO command not received from server.')  #hash out
+    #if recv3[:3] != '251':
+        #print('RCPT TO command not received from server.')  # hash out
     # Fill in end
 
     # Send DATA command and handle server response.
