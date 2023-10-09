@@ -68,15 +68,15 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     # Message ends with a single period, send message end and handle server response.
     # Fill in start
     clientSocket.send(endmsg.encode())
-    #recv5 = clientSocket.recv(1024).decode()
-    #if recv5[:3] != '250':  # hash out
-        #print('Message ended with a single period.')  # hash out
+    recv5 = clientSocket.recv(1024).decode()
+    if recv5[:3] == '250':  # hash out
+        print('Message successfully ended with a single period.')  # hash out
 
     # Fill in end
 
     # Send QUIT command and handle server response.
     # Fill in start
-    quitCommand = 'QUIT:\r\n'
+    quitCommand = 'QUIT\r\n'
     clientSocket.send(quitCommand.encode())
     recv5 = clientSocket.recv(1024).decode()
     if recv5[:3] == '221':  # hash out
