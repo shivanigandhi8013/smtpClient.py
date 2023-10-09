@@ -56,8 +56,8 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     dataCommand = 'DATA\r\n'
     clientSocket.send(dataCommand.encode())
     recv4 = clientSocket.recv(1024).decode()
-    if recv4[:3] == '354':  # hash out
-        print('Start mail input; end with \r\n')  # hash out
+    #if recv4[:3] == '354':  # hash out
+        #print('Start mail input; end with \r\n')  # hash out
     # Fill in end
 
     # Send message data.
@@ -69,7 +69,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     # Fill in start
     clientSocket.send(endmsg.encode())
     recv5 = clientSocket.recv(1024).decode()
-    #if recv5[:3] == '250':  # hash out
+    if recv5[:3] == '354':  # hash out
         #print('Message successfully ended with a single period.')  # hash out
 
     # Fill in end
