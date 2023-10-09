@@ -70,7 +70,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     clientSocket.send(endmsg.encode())
     recv5 = clientSocket.recv(1024).decode()
     if recv5[:3] == '354':  # hash out
-        #print('Message successfully ended with a single period.')  # hash out
+        print('Message successfully ended with a single period.')  # hash out
 
     # Fill in end
 
