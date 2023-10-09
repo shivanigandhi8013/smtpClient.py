@@ -57,7 +57,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     clientSocket.send(dataCommand.encode())
     recv4 = clientSocket.recv(1024).decode('utf-8')
     #if recv4[:3] == '354':  # hash out
-    print(recv4)  # hash out
+    #print(recv4)  # hash out
     # Fill in end
 
     # Send message data.
@@ -76,11 +76,13 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
 
     # Send QUIT command and handle server response.
     # Fill in start
-    quitCommand = 'QUIT\r\n'
-    clientSocket.send(quitCommand.encode())
-    recv5 = clientSocket.recv(1024).decode()
-    if recv5[:3] == '221':  # hash out
-        print('QUIT') # hash out
+
+    clientSocket.send(b'QUIT\r\n')
+    #quitCommand = 'QUIT\r\n'
+    #clientSocket.send(quitCommand.encode())
+    #recv5 = clientSocket.recv(1024).decode()
+    #if recv5[:3] == '221':  # hash out
+        #print('QUIT') # hash out
 
     clientSocket.close()
 
